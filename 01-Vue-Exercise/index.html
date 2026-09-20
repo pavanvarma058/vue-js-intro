@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Big Bang Theory</title>
+  </head>
+  <body>
+    <h1>The Big Bang Theory</h1>
+    <div id="app">
+      <ul v-if="characters.length !== 0">
+        <li v-for="character in characters">{{ character }}</li>
+      </ul>
+      <ul v-else>
+        <li>No characters found</li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const { createApp } = Vue;
+
+      const app = createApp({
+        data() {
+          return {
+            characters: ["Sheldon", "Leonard", "Howard", "Raj"],
+          };
+        },
+      });
+
+      app.mount("#app");
+    </script>
+  </body>
+</html>
